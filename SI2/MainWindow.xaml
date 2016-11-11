@@ -1,0 +1,14 @@
+﻿<Window x:Class="SI2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SI2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="99.291" Width="337.588">
+    <Grid>
+        <Button x:Name="button" Content="Hetmany" HorizontalAlignment="Left" Margin="21,13,0,0" VerticalAlignment="Top" Width="287" Click="button_Click"/>
+        <Button x:Name="button1" Content="Sudoku" HorizontalAlignment="Left" Margin="21,38,0,0" VerticalAlignment="Top" Width="287" Click="button1_Click"/>
+
+    </Grid>
+</Window>
