@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SI2"
         mc:Ignorable="d"
-        Title="QueensWindow" Height="609.373" Width="837.47">
+        Title="QueensWindow" Height="609.373" Width="837.47" ResizeMode="CanMinimize">
     <Grid Margin="0,0,2,12">
         <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBox_SelectionChanged" SelectedIndex="0">
             <Label Content="1"/>
