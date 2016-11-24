@@ -24,7 +24,7 @@
             <Label Content="14"/>
             <Label Content="15"/>
         </ComboBox>
-        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="162,64,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
+        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="162,64,0,0" VerticalAlignment="Top" Width="292" SelectedIndex="0">
             <Label Content="Ustawianie w pierwszym wolnym miejscu"/>
         </ComboBox>
         <Button x:Name="button" Content="Szukaj rozwiazania" HorizontalAlignment="Left" Margin="10,108,0,0" VerticalAlignment="Top" Width="272" Click="button_Click"/>
@@ -40,9 +40,9 @@
         <Label x:Name="labelResults" Content="" HorizontalAlignment="Left" Margin="137,182,0,0" VerticalAlignment="Top"/>
         <Label x:Name="labelHetmans" Content="" HorizontalAlignment="Left" Margin="216,213,0,0" VerticalAlignment="Top"/>
         <Label x:Name="labelReturns" Content="" HorizontalAlignment="Left" Margin="146,239,0,0" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="288,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="336" Width="529"><Run Text="TextBlock"/><LineBreak/><Run Text="hjkljhl"/></TextBlock>
-        <ComboBox x:Name="comboBoxResults" HorizontalAlignment="Left" Margin="381,64,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBoxResults_SelectionChanged"/>
-        <Label x:Name="label2" Content="Rozwiązanie" HorizontalAlignment="Left" Margin="404,33,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="288,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="336" Width="529"><Run Text="Problem hetmanow"/><LineBreak/><Run Text="Podaj dane"/></TextBlock>
+        <ComboBox x:Name="comboBoxResults" HorizontalAlignment="Left" Margin="498,106,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBoxResults_SelectionChanged"/>
+        <Label x:Name="label2" Content="Rozwiązanie" HorizontalAlignment="Left" Margin="380,107,0,0" VerticalAlignment="Top"/>
         <Grid HorizontalAlignment="Left" Height="100" Margin="618,33,0,0" VerticalAlignment="Top" Width="100"/>
 
     </Grid>

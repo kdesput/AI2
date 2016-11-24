@@ -27,7 +27,7 @@ namespace SI2
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -36,8 +36,8 @@ namespace SI2
             int method; //BT or FC
             if (radioButton.IsChecked == true) method = 0; //BT
             else method = 1;
-            int N = comboBox.SelectedIndex+1;
-            if(method==0) //BT
+            int N = comboBox.SelectedIndex + 1;
+            if (method == 0) //BT
             {
                 BTQueens bt = new BTQueens(N);
                 var watch = System.Diagnostics.Stopwatch.StartNew(); //counting time
@@ -64,39 +64,46 @@ namespace SI2
                 labelTime.Content = watch.ElapsedMilliseconds;
                 labelHetmans.Content = fc.GetAssigns();
                 labelResults.Content = fc.GetResults();
-                textBlock.Text = fc.GetVisualization();
                 labelReturns.Content = fc.GetReturns();
-                //solvedBoards = fc.GetSolvedBoards();
+                solvedBoards = fc.GetSolvedBoards();
             }
 
-            //comboBoxResults.SelectedIndex = 0;
+            
             comboBoxResults.Items.Clear(); //cleaning results comboBox
 
             int j = 0;
-            foreach(int[,] board in solvedBoards)
+            foreach (int[,] board in solvedBoards)
             {
                 Label newLabel = new Label();
                 newLabel.Content = ++j;
                 comboBoxResults.Items.Add(newLabel);
             }
-           
+            comboBoxResults.SelectedIndex = 0;
+
         }
 
         private void comboBoxResults_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //TODO on change result
-            int[,] board = solvedBoards[comboBoxResults.SelectedIndex];
-            int N = (int) Math.Sqrt(board.Length);
-            string text = "";
-            for (int i = 0; i < N; i++)
+            if(solvedBoards.Count() > 0 && comboBoxResults.SelectedIndex >= 0)
             {
-                for (int j = 0; j < N; j++)
+                int[,] board;
+                int selectedIndex = comboBoxResults.SelectedIndex;
+                board = solvedBoards[selectedIndex];
+                int N = (int)Math.Sqrt(board.Length);
+                string text = "";
+                for (int i = 0; i < N; i++)
                 {
-                    text += board[i, j] + "\t";
+                    for (int j = 0; j < N; j++)
+                    {
+                        if (board[i, j] == 1)
+                            text += "X\t";
+                        else text += "_\t";
+                    }
+                    text += "\n";
                 }
-                text += "\n";
+                textBlock.Text = text;
             }
-            textBlock.Text = text;
+            
         }
     }
 }

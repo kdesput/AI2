@@ -12,8 +12,8 @@ namespace SI2
         int results;
         int returns;
         int[,] board;
+        List<int[,]> solvedBoards; //solved boards 
         int N;
-        string visualization;
         public FCQueens(int N)
         {
             board = new int[N, N];
@@ -24,17 +24,17 @@ namespace SI2
             assigns = 0;
             results = 0;
             returns = 0;
+            solvedBoards = new List<int[,]>();
         }
 
         public int GetResults()
         {
             return results;
         }
-        public string GetVisualization()
+        public List<int[,]> GetSolvedBoards()
         {
-            return visualization;
+            return solvedBoards;
         }
-
         public int GetReturns()
         {
             return returns;
@@ -46,7 +46,7 @@ namespace SI2
         }
         public bool IfCan(int x, int y)
         {
-            assigns++;
+            
             if (y >= N) return true;
             bool ret = true;
             for (int i = 0; i < N; i++) //vertically & horizontally
@@ -94,15 +94,12 @@ namespace SI2
             {
                 //solution found
                 results++;
+                solvedBoards.Add((int[,])board.Clone());
                 Write();
                 return true;
             }
             else
             {
-                if (fields.Count == 0)
-                {
-                    return false;
-                }
                 for (int i = 0; i < fields.Count; i++)
                 {
                     assigns++;
@@ -112,7 +109,7 @@ namespace SI2
                     {
                         if (InsertQueen(column + 1, temp))
                         {
-                            return true;
+                            ret = true;
                         }
                     }
                     board[fields[i], column] = 0;
@@ -129,11 +126,12 @@ namespace SI2
             {
                 for (int j = 0; j < N; j++)
                 {
-                    ret += board[i, j] + "\t";
+                    if (board[i, j] == 1)
+                        ret += "X\t";
+                    else ret += "_\t";
                 }
                 ret += "\n";
             }
-            visualization = ret;
         }
     }
 }

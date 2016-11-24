@@ -86,7 +86,7 @@ namespace SI2
             {
                  //solution found :)
                 results++;
-                solvedBoards.Add(board);
+                solvedBoards.Add((int[,])board.Clone());
                 return true;
             }
             else
