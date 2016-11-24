@@ -14,7 +14,6 @@ namespace SI2
         int[,] board;
         List<int[,]> solvedBoards; //solved boards 
         int N;
-        string visualization;
         public BTQueens(int N)
         {
             board = new int[N, N];
@@ -31,10 +30,6 @@ namespace SI2
         public int GetResults()
         {
             return results;
-        }
-        public string GetVisualization()
-        {
-            return visualization;
         }
 
         public List<int[,]> GetSolvedBoards()

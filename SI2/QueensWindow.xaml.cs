@@ -46,7 +46,6 @@ namespace SI2
                 labelTime.Content = watch.ElapsedMilliseconds;
                 labelHetmans.Content = bt.GetAssigns();
                 labelResults.Content = bt.GetResults();
-                textBlock.Text = bt.GetVisualization();
                 labelReturns.Content = bt.GetReturns();
                 solvedBoards = bt.GetSolvedBoards();
             }
