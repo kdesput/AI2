@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -56,11 +59,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BTQueens.cs" />
+    <Compile Include="BTSudoku.cs" />
     <Compile Include="FCQueens.cs" />
+    <Compile Include="FCSudoku.cs" />
     <Compile Include="QueensWindow.xaml.cs">
       <DependentUpon>QueensWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Sudoku.cs" />
+    <Compile Include="SudokuCell.cs" />
     <Compile Include="SudokuWindow.xaml.cs">
       <DependentUpon>SudokuWindow.xaml</DependentUpon>
     </Compile>

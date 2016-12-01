@@ -33,9 +33,18 @@ namespace SI2
             if (radioButton.IsChecked == true) method = 0; //BT
             else method = 1;
             int N = comboBoxN.SelectedIndex + 1;
+            int heuristic = comboBoxHeuristic.SelectedIndex;
             if (method == 0) //BT
             {
-
+                BTSudoku bt= new BTSudoku(ref sudoku, heuristic);
+                var watch = System.Diagnostics.Stopwatch.StartNew(); //counting time
+                bt.Solve();
+                watch.Stop();
+                labelTime.Content = watch.ElapsedMilliseconds;
+                labelAssigns.Content = bt.GetAssigns();
+                labelReturns.Content = bt.GetReturns();
+                //displaying sudoku
+                textBlock.Text = bt.GetSudoku().ToString();
             }
             else //FC
             {

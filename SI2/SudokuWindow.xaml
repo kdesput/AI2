@@ -14,22 +14,21 @@
         </ComboBox>
         <ComboBox x:Name="comboBoxHeuristic" HorizontalAlignment="Left" Margin="162,64,0,0" VerticalAlignment="Top" Width="292" SelectedIndex="0" SelectionChanged="comboBoxHeuristic_SelectionChanged">
             <Label Content="Ustawianie w pierwszym wolnym miejscu"/>
+            <Label Content="Zmienna najbardziej ograniczona"/>
+            <Label Content="Zmienna najbardziej ograniczajaca"/>
         </ComboBox>
         <Button x:Name="button" Content="Szukaj rozwiazania" HorizontalAlignment="Left" Margin="10,108,0,0" VerticalAlignment="Top" Width="272" Click="button_Click"/>
         <Label x:Name="label" Content="N" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.606,1.004"/>
         <RadioButton x:Name="radioButton" Content="Backtracking" HorizontalAlignment="Left" Margin="33,15,0,0" VerticalAlignment="Top" IsChecked="True"/>
-        <RadioButton x:Name="radioButton1" Content="Forward Checking" HorizontalAlignment="Left" Margin="162,15,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="radioButton1" Content="Forward Checking" HorizontalAlignment="Left" Margin="162,15,0,0" VerticalAlignment="Top" IsEnabled="False"/>
         <Label x:Name="label1" Content="Heurystyka" HorizontalAlignment="Left" Margin="162,38,0,0" VerticalAlignment="Top"/>
         <Label x:Name="labelTimeInfo" Content="Czas" HorizontalAlignment="Left" Margin="33,151,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="labelResultsInfo" Content="Liczba rozwiazan" HorizontalAlignment="Left" Margin="33,182,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="labelQueensInfo" Content="Liczba postawionych cyfr" HorizontalAlignment="Left" Margin="33,213,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="labelReturnsInfo" Content="Liczba powrotów" HorizontalAlignment="Left" Margin="33,239,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.293,0.389"/>
+        <Label x:Name="labelQueensInfo" Content="Liczba postawionych cyfr" HorizontalAlignment="Left" Margin="33,182,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelReturnsInfo" Content="Liczba powrotów" HorizontalAlignment="Left" Margin="33,213,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.293,0.389"/>
         <Label x:Name="labelTime" Content="" HorizontalAlignment="Left" Margin="72,151,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.142,-0.004"/>
-        <Label x:Name="labelResults" Content="" HorizontalAlignment="Left" Margin="137,182,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="labelHetmans" Content="" HorizontalAlignment="Left" Margin="216,213,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="labelReturns" Content="" HorizontalAlignment="Left" Margin="146,239,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelAssigns" Content="" HorizontalAlignment="Left" Margin="179,182,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelReturns" Content="" HorizontalAlignment="Left" Margin="138,213,0,0" VerticalAlignment="Top"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="288,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="558" Width="853"><Run Text="Sudoku"/><LineBreak/><Run Text="Podaj dane"/></TextBlock>
-        <Grid HorizontalAlignment="Left" Height="100" Margin="618,33,0,0" VerticalAlignment="Top" Width="100"/>
         <ComboBox x:Name="comboBoxM" HorizontalAlignment="Left" Margin="76,64,0,0" VerticalAlignment="Top" Width="57" SelectionChanged="comboBoxM_SelectionChanged" >
             <Label Content="1"/>
             <Label Content="2"/>
