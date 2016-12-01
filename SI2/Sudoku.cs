@@ -6,17 +6,25 @@ using System.Threading.Tasks;
 
 namespace SI2
 {
-    class Sudoku
+    public class Sudoku : ICloneable
     {
         public int[,] board;
         public int N;
-        public static int Npow;
+        public int Npow;
         Random random;
 
         public Sudoku(int N)
         {
             Npow = (int)Math.Pow(N, 2);
             board = new int[Npow, Npow];
+            random = new Random();
+            this.N = N;
+        }
+
+        public Sudoku(int N, int[,] board)
+        {
+            Npow = (int)Math.Pow(N, 2);
+            this.board = board;
             random = new Random();
             this.N = N;
         }
@@ -41,7 +49,10 @@ namespace SI2
 
         public void SetCell(int x, int y, int value)
         {
+            System.Diagnostics.Debug.WriteLine("SEEET");
+            System.Diagnostics.Debug.WriteLine(ToString());
             board[x, y] = value;
+            System.Diagnostics.Debug.WriteLine(ToString());
         }
 
 
@@ -182,6 +193,11 @@ namespace SI2
         public int[,] GetBoard()
         {
             return board;
+        }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
         }
     }
 }

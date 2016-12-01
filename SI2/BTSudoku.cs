@@ -10,7 +10,7 @@ namespace SI2
     {
         int assigns, returns, heuristic;
         Sudoku sudoku;
-        public BTSudoku(ref Sudoku sudoku, int heuristic)
+        public BTSudoku(Sudoku sudoku, int heuristic)
         {
             System.Diagnostics.Debug.WriteLine("test");
             assigns = 0;
@@ -21,16 +21,16 @@ namespace SI2
 
         public bool Solve()
         {
-            assigns++;
+            System.Diagnostics.Debug.WriteLine(sudoku.ToString());
             int[] empty = sudoku.GetEmpty(heuristic);
             bool ret = false;
             if (empty == null)
             {
                 ret = true;
-                System.Diagnostics.Debug.WriteLine("Rozwiazalem!\n"+sudoku.ToString());
             }
             else
             {
+                System.Diagnostics.Debug.WriteLine(empty[0] + " " + empty[1]);
                 System.Diagnostics.Debug.WriteLine("Wszedlem");
                 int x = empty[0];
                 int y = empty[1];
@@ -39,7 +39,7 @@ namespace SI2
                     if (IsSafe(x, y, i))
                     {
                         sudoku.SetCell(x, y, i);
-
+                        System.Diagnostics.Debug.WriteLine("PO: " + sudoku.ToString());
                         if (Solve())
                         {
                             ret = true;
@@ -70,14 +70,16 @@ namespace SI2
 
         public bool IsSafe(int x, int y, int value)
         {
+            System.Diagnostics.Debug.WriteLine(x + " safe " + y +" " + value);
             assigns++;
             //checking rows and columns
             for (int i = 0; i < sudoku.GetNpow(); i++)
             {
                 if (sudoku.GetBoard()[x, i] == value) return false;
-                if (sudoku.GetBoard()[i, i] == value) return false;
+                if (sudoku.GetBoard()[i, y] == value) return false;
             }
             //checking small squares
+            System.Diagnostics.Debug.WriteLine("small");
             int a = x - (x % sudoku.GetN());
             int b = y - (y % sudoku.GetN());
 

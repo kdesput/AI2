@@ -21,6 +21,7 @@ namespace SI2
     public partial class SudokuWindow : Window
     {
         private Sudoku sudoku;
+        int[,] boardCopy;
         public SudokuWindow()
         {
             InitializeComponent();
@@ -34,9 +35,10 @@ namespace SI2
             else method = 1;
             int N = comboBoxN.SelectedIndex + 1;
             int heuristic = comboBoxHeuristic.SelectedIndex;
+            boardCopy = (int[,])sudoku.GetBoard().Clone();
             if (method == 0) //BT
             {
-                BTSudoku bt= new BTSudoku(ref sudoku, heuristic);
+                BTSudoku bt= new BTSudoku((Sudoku)sudoku.Clone(), heuristic);
                 var watch = System.Diagnostics.Stopwatch.StartNew(); //counting time
                 bt.Solve();
                 watch.Stop();
@@ -80,7 +82,19 @@ namespace SI2
 
         private void comboBoxHeuristic_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            button_Restore_Click(sender, e);
+        }
 
+        private void button_Restore_Click(object sender, RoutedEventArgs e)
+        {
+            if (boardCopy != null)
+            {
+                sudoku = new Sudoku(comboBoxN.SelectedIndex + 2, boardCopy);
+                textBlock.Text = sudoku.ToString();
+                labelTime.Content = "";
+                labelAssigns.Content = "";
+                labelReturns.Content = "";
+            }
         }
     }
 }

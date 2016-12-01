@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SI2
 {
-    class SudokuCell : IEquatable<SudokuCell> , IComparable<SudokuCell>
+    public class SudokuCell : IEquatable<SudokuCell> , IComparable<SudokuCell>
     {
         public int x, y, emptyNeighbours;
         public SudokuCell(int x, int y, int emptyNeighbours)
