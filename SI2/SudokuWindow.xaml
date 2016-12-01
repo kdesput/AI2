@@ -23,7 +23,7 @@
         <RadioButton x:Name="radioButton1" Content="Forward Checking" HorizontalAlignment="Left" Margin="162,15,0,0" VerticalAlignment="Top" IsEnabled="False"/>
         <Label x:Name="label1" Content="Heurystyka" HorizontalAlignment="Left" Margin="162,38,0,0" VerticalAlignment="Top"/>
         <Label x:Name="labelTimeInfo" Content="Czas" HorizontalAlignment="Left" Margin="33,151,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="labelQueensInfo" Content="Liczba postawionych cyfr" HorizontalAlignment="Left" Margin="33,182,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelQueensInfo" Content="Liczba postawionych liczb" HorizontalAlignment="Left" Margin="33,182,0,0" VerticalAlignment="Top"/>
         <Label x:Name="labelReturnsInfo" Content="Liczba powrotów" HorizontalAlignment="Left" Margin="33,213,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.293,0.389"/>
         <Label x:Name="labelTime" Content="" HorizontalAlignment="Left" Margin="72,151,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.142,-0.004"/>
         <Label x:Name="labelAssigns" Content="" HorizontalAlignment="Left" Margin="179,182,0,0" VerticalAlignment="Top"/>
