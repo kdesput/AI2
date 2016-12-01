@@ -86,7 +86,7 @@ namespace SI2
             return fields;
         }
 
-        public bool InsertQueen(int column, List<int> fields)
+        public bool InsertQueen(int column, List<int> fields) //assigning new queen to this column
         {
 
             bool ret = false;
@@ -98,7 +98,7 @@ namespace SI2
                 Write();
                 return true;
             }
-            else
+            else //still no solution
             {
                 for (int i = 0; i < fields.Count; i++)
                 {

@@ -74,7 +74,7 @@ namespace SI2
             return ret;
         }
 
-        public bool InsertQueen(int column) {
+        public bool InsertQueen(int column) { //assigning new queen to this column
 
             bool ret = false;
             if (column >= N)
@@ -84,7 +84,7 @@ namespace SI2
                 solvedBoards.Add((int[,])board.Clone());
                 return true;
             }
-            else
+            else //still no solution
             {
                 for (int i = 0; i < N; i++)
                 {

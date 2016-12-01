@@ -29,7 +29,7 @@ namespace SI2
             this.N = N;
         }
 
-        public void DeleteCells(int M)
+        public void DeleteCells(int M) //deleting cells from a solved sudoku
         {
             for(int i = 0; i < M; i++)
             {
@@ -47,12 +47,9 @@ namespace SI2
             }
         }
 
-        public void SetCell(int x, int y, int value)
+        public void SetCell(int x, int y, int value) //assigning new value to the cell
         {
-            System.Diagnostics.Debug.WriteLine("SEEET");
-            System.Diagnostics.Debug.WriteLine(ToString());
             board[x, y] = value;
-            System.Diagnostics.Debug.WriteLine(ToString());
         }
 
 
@@ -79,7 +76,7 @@ namespace SI2
             }
         }
 
-        public int[] GetEmpty(int heuristic = 0)
+        public int[] GetEmpty(int heuristic = 0) //get the empty cell
         {
             if(heuristic == 0) //selects first free cell
             {
@@ -130,7 +127,7 @@ namespace SI2
             return null;
         }
 
-        public List<SudokuCell> NumberOfEmptyNeighbours()
+        public List<SudokuCell> NumberOfEmptyNeighbours() //number of empty dependent cells
         {
             List<SudokuCell> list = new List<SudokuCell>();
             for (int i = 0; i < Npow; i++)
@@ -164,7 +161,7 @@ namespace SI2
             return list;
         }
 
-        public override string ToString() //converts sudoku array to a text
+        public override string ToString() //converts sudoku array to a String
         {
             string ret = "";
             for (int i = 0; i < Npow; i++)

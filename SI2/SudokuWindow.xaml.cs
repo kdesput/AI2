@@ -35,13 +35,14 @@ namespace SI2
             else method = 1;
             int N = comboBoxN.SelectedIndex + 1;
             int heuristic = comboBoxHeuristic.SelectedIndex;
-            boardCopy = (int[,])sudoku.GetBoard().Clone();
+            boardCopy = (int[,])sudoku.GetBoard().Clone(); //creating copy
             if (method == 0) //BT
             {
                 BTSudoku bt= new BTSudoku((Sudoku)sudoku.Clone(), heuristic);
                 var watch = System.Diagnostics.Stopwatch.StartNew(); //counting time
                 bt.Solve();
                 watch.Stop();
+                //displaying results
                 labelTime.Content = watch.ElapsedMilliseconds;
                 labelAssigns.Content = bt.GetAssigns();
                 labelReturns.Content = bt.GetReturns();
@@ -50,7 +51,7 @@ namespace SI2
             }
             else //FC
             {
-
+                //TODO FC :(
             }
         }
 
@@ -60,6 +61,7 @@ namespace SI2
             if (comboBoxM != null)
                 comboBoxM.Items.Clear(); //cleaning results comboBox
             else comboBoxM = new ComboBox();
+            //adding new labels to comboBoxM
             for (int j = 0; j< Math.Pow(comboBoxN.SelectedIndex + 2, 4) - 1; j++)
             {
                 Label newLabel = new Label();
@@ -89,8 +91,9 @@ namespace SI2
         {
             if (boardCopy != null)
             {
-                sudoku = new Sudoku(comboBoxN.SelectedIndex + 2, boardCopy);
+                sudoku = new Sudoku(comboBoxN.SelectedIndex + 2, boardCopy); //getting sudoku from a copy
                 textBlock.Text = sudoku.ToString();
+                //deleting displayed results
                 labelTime.Content = "";
                 labelAssigns.Content = "";
                 labelReturns.Content = "";

@@ -8,7 +8,9 @@ namespace SI2
 {
     class BTSudoku
     {
-        int assigns, returns, heuristic;
+        int assigns; //no. of assigned numbers
+        int returns; //no. of deleted numbers
+        int heuristic; //chosen heuristic
         Sudoku sudoku;
         public BTSudoku(Sudoku sudoku, int heuristic)
         {
@@ -24,32 +26,28 @@ namespace SI2
             System.Diagnostics.Debug.WriteLine(sudoku.ToString());
             int[] empty = sudoku.GetEmpty(heuristic);
             bool ret = false;
-            if (empty == null)
+            if (empty == null) //Sudoku solved
             {
                 ret = true;
             }
-            else
+            else // There are still empty cells
             {
-                System.Diagnostics.Debug.WriteLine(empty[0] + " " + empty[1]);
-                System.Diagnostics.Debug.WriteLine("Wszedlem");
                 int x = empty[0];
                 int y = empty[1];
-                for (int i = 1; i <= sudoku.GetNpow(); i++)
+                for (int i = 1; i <= sudoku.GetNpow(); i++) 
                 {
-                    if (IsSafe(x, y, i))
+                    if (IsSafe(x, y, i)) //going through numbers from the domain
                     {
-                        sudoku.SetCell(x, y, i);
-                        System.Diagnostics.Debug.WriteLine("PO: " + sudoku.ToString());
+                        sudoku.SetCell(x, y, i); //writing in the cell
                         if (Solve())
                         {
                             ret = true;
                         }
-                        else sudoku.SetCell(x, y, 0);
+                        else sudoku.SetCell(x, y, 0); //deleting written number
                     }
                 }
             }
             if(ret == false) returns++;
-            System.Diagnostics.Debug.WriteLine("Wychodze z " + ret);
             return ret;
         }
 
@@ -70,7 +68,6 @@ namespace SI2
 
         public bool IsSafe(int x, int y, int value)
         {
-            System.Diagnostics.Debug.WriteLine(x + " safe " + y +" " + value);
             assigns++;
             //checking rows and columns
             for (int i = 0; i < sudoku.GetNpow(); i++)
@@ -79,7 +76,6 @@ namespace SI2
                 if (sudoku.GetBoard()[i, y] == value) return false;
             }
             //checking small squares
-            System.Diagnostics.Debug.WriteLine("small");
             int a = x - (x % sudoku.GetN());
             int b = y - (y % sudoku.GetN());
 
