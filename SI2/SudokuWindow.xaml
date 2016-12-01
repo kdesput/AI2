@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SI2"
         mc:Ignorable="d"
-        Title="QueensWindow" Height="609.373" Width="837.47" ResizeMode="CanMinimize">
+        Title="QueensWindow" Height="754.756" Width="1159.17" ResizeMode="CanMinimize">
     <Grid Margin="0,0,2,12">
-        <ComboBox x:Name="comboBoxN" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" Width="57" SelectionChanged="comboBoxN_SelectionChanged" >
+        <ComboBox x:Name="comboBoxN" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" Width="57" SelectionChanged="comboBoxN_SelectionChanged" SelectedIndex="0" >
             <Label Content="2"/>
             <Label Content="3"/>
             <Label Content="4"/>
@@ -28,9 +28,9 @@
         <Label x:Name="labelResults" Content="" HorizontalAlignment="Left" Margin="137,182,0,0" VerticalAlignment="Top"/>
         <Label x:Name="labelHetmans" Content="" HorizontalAlignment="Left" Margin="216,213,0,0" VerticalAlignment="Top"/>
         <Label x:Name="labelReturns" Content="" HorizontalAlignment="Left" Margin="146,239,0,0" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="288,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="336" Width="529"><Run Text="Sudoku"/><LineBreak/><Run Text="Podaj dane"/></TextBlock>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="288,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="558" Width="853"><Run Text="Sudoku"/><LineBreak/><Run Text="Podaj dane"/></TextBlock>
         <Grid HorizontalAlignment="Left" Height="100" Margin="618,33,0,0" VerticalAlignment="Top" Width="100"/>
-        <ComboBox x:Name="comboBoxM" HorizontalAlignment="Left" Margin="76,64,0,0" VerticalAlignment="Top" Width="57" SelectionChanged="comboBoxM_SelectionChanged" SelectedIndex="0">
+        <ComboBox x:Name="comboBoxM" HorizontalAlignment="Left" Margin="76,64,0,0" VerticalAlignment="Top" Width="57" SelectionChanged="comboBoxM_SelectionChanged" >
             <Label Content="1"/>
             <Label Content="2"/>
             <Label Content="3"/>

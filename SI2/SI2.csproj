@@ -60,6 +60,7 @@
     <Compile Include="QueensWindow.xaml.cs">
       <DependentUpon>QueensWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Sudoku.cs" />
     <Compile Include="SudokuWindow.xaml.cs">
       <DependentUpon>SudokuWindow.xaml</DependentUpon>
     </Compile>
